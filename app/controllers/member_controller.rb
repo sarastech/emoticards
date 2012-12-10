@@ -10,10 +10,10 @@ class MemberController < ApplicationController
     end
   end
 
-  def create
+  def create auth
     @member = Member.create_member auth
-    session[:user_id] = @credential.id
-    session[:email] = @credential.email
+    session[:user_id] = @member.fbuid
+    session[:email] = @member.email
     reset_session
     url = "#welcome"
     redirect_to url, :notice => "Signed in!"
