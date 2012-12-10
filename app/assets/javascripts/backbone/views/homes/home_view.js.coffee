@@ -5,6 +5,7 @@ class Emoticard.Views.Homes.HomeView extends Backbone.View
   
   events :
     "click #fbwallpost" : "post_to_wall"
+    "keydown #reason" : "displaycharlength"
   
   constructor: (options) ->
     super(options)
@@ -15,13 +16,18 @@ class Emoticard.Views.Homes.HomeView extends Backbone.View
       method: 'feed',
       redirect_uri: 'http://localhost:3000',
       link: 'http://en.wikipedia.org/wiki/Rajinikanth',
-      picture: 'http://4.bp.blogspot.com/_BbJAArGDIEA/SFvhH0Ar54I/AAAAAAAAGsA/FP9PEiviL84/s400/rajinikanth.jpg',
+      picture: 'http://www.kollytalk.com/wp-content/uploads/2012/12/Shiva-with-Rajini.jpg',
       name: 'Wish Rajini',
       caption: '12-12-12',
-      message: 'hi'
+      message: 'hi',
       description: 'Biggest birthday wish for Rajini.'
     FB.ui(obj)
     
+  displaycharlength: (e) ->
+    @message = $('#reason').val()
+    length = 140 - @message.length
+    $("#charlength").html(length + ' characters left.')
+  
   render: ->
     @member.fetch(
       success: =>

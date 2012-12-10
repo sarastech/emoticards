@@ -46,4 +46,18 @@ class MemberController < ApplicationController
     url = "#"
     redirect_to url, :notice => "Signed Out!"
   end
+  
+  def save_message
+    params[:member_id] = session[:user_id] 
+    @message = Message.new(params[:message])
+    if @message.save
+      respond_to do |format|
+        format.json { render json: @message , status: :accepted}
+      end
+    else
+      respond_to do |format|
+        format.json { render status: :not_acceptable }
+      end  
+    end
+  end
 end
