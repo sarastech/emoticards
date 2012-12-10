@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0; padding:0}
+body{ background:#9EDAEE;}
+.splashScreen{display:block; overflow:hidden; width:960px; margin:0 auto; text-align:center; margin-top:150px;}
+.connectSocial{display:block; overflow:hidden; margin-top:30px;}
+a.btnFB img,a.btnFB:link img{width:284px; height:50px; background:asset-url("btn_Facebook.png",images) 0 0;}
+a.btnFB:hover img{background-position:0 100px;}
+a.btnFB:active img{background-position:0 50px;}
