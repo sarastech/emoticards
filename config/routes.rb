@@ -18,6 +18,8 @@ Emoticard::Application.routes.draw do
   match "/auth/:provider/callback" => "member#index"
   
   match "/signout" => "member#destroy", :as => :signout
+  
+  match "/members" => "members#fetch", :via => :get
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

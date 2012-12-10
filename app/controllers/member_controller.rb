@@ -4,7 +4,7 @@ class MemberController < ApplicationController
     #raise auth.to_yaml
     @member = Member.find_by_fbuid(auth["uid"])
     if @member
-      signin auth
+      signin @member
     else
       create auth
     end
@@ -12,29 +12,38 @@ class MemberController < ApplicationController
 
   def create auth
     @member = Member.create_member auth
-    session[:user_id] = @member.fbuid
+    session[:user_id] = @member.id
+    session[:fbuid] = @member.fbuid
     session[:email] = @member.email
-    reset_session
-    url = "#welcome"
-    redirect_to url, :notice => "Signed in!"
+    url = "#home/new"
+    redirect_to url, :notice => "Signed up!"
   end
 
   def update
   end
 
   def fetch
+    @member = Member.find(session[:user_id])
+    respond.to do |format|
+      format.json { render json:@member, status: :accepted}
+    end
   end
 
   def destroy
 
   end
 
-  def signin
+  def signin member
+    session[:user_id] = member.id
+    session[:fbuid] = member.fbuid
+    session[:email] = member.email
+    url = "#home"
+    redirect_to url, :notice => "Signed in!"
   end
 
   def signout
     reset_session
-    url = "#welcome"
-    redirect_to url, :notice => "Signed Up!"
+    url = "#"
+    redirect_to url, :notice => "Signed Out!"
   end
 end
