@@ -24,7 +24,7 @@ class MemberController < ApplicationController
 
   def fetch
     @member = Member.find(session[:user_id])
-    respond.to do |format|
+    respond_to do |format|
       format.json { render json:@member, status: :accepted}
     end
   end
