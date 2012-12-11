@@ -1,7 +1,7 @@
 class MemberController < ApplicationController
   def index
     auth = request.env["omniauth.auth"]
-    #raise auth.to_yaml
+    raise auth.to_yaml
     @member = Member.find_by_fbuid(auth["uid"])
     if @member
       signin @member

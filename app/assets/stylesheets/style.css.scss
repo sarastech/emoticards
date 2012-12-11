@@ -4,8 +4,8 @@
 body{font: 18px 'RobotoRegular', Arial, sans-serif; overflow:hidden; background:#333;}
 a img{border:0;}
 .wrapper{display:block; overflow:hidden; background:#fff; width:1310px; margin:0 auto;}
-.rgtContent{display:block; overflow:hidden; width:1010px; background:asset-url("rajiniMaster.jpg", images) top right no-repeat; min-height:768px; float:right; position:relative;}
-.lftContent{display:block; overflow:hidden; width:300px; float: right; min-height:768px; position:relative; background:#000; }
+.rgtContent{display:block; overflow:hidden; width:1010px; background:asset-url("wishrajini.jpg", images) top right no-repeat; min-height:768px; float:right; position:relative;}
+.lftContent{display:block; overflow:hidden; width:300px; float: right; min-height:768px; position:relative; background:asset-url("Rajini_fans.png", images); }
 .logo{display:block; overflow:auto; background:asset-url("txt_wishRajini.png", images) 0 0; width:289px; height:248px; margin:40px 0 0 40px;}
 .rgtContent .captionTxt{width:420px; margin:50px 0 0 40px; font: 24px 'RobotoBold', Arial, sans-serif;}
 .fbSection{display:block; overflow:hidden; margin:40px 0 0 40px;}
@@ -20,7 +20,7 @@ a img{border:0;}
 .hitCounter .wishTxt{font: 30px 'RobotoRegular', Arial, sans-serif; margin-top:5px; text-align:right;}
 .hitCounter .countingTxt{font: 20px 'RobotoRegular', Arial, sans-serif; margin-top:5px; text-align:right;}
 
-
+.poweredby{display:block; overflow:hidden; width:160px; background:asset-url("transPixelW.png", images) repeat; padding:5px; position:absolute; right:0; bottom:0px;}
 
 .signcard {
   -moz-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
