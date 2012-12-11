@@ -20,6 +20,11 @@ Emoticard::Application.routes.draw do
   match "/signout" => "member#destroy", :as => :signout
   
   match "/members" => "member#fetch", :via => :get
+  
+  match "/messages" => "member#get_message", :via => :get
+  
+  match "/messages" => "member#save_message", :via => :post
+ 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

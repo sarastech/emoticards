@@ -5,11 +5,15 @@ class Emoticard.Views.Homes.HomeView extends Backbone.View
   
   events :
     "click #fbwallpost" : "post_to_wall"
-    "keydown #reason" : "displaycharlength"
+    "keydown #message" : "displaycharlength"
+    "click #signcard" : "submit_message"
   
   constructor: (options) ->
     super(options)
-    @member = new Emoticard.Models.Member();
+    @member = new Emoticard.Models.Member()
+    @message = new Emoticard.Models.Message()
+    @messageflag = 1
+    @message.fetch(wait:true)
     
   post_to_wall: (e) ->
     obj =
@@ -24,13 +28,31 @@ class Emoticard.Views.Homes.HomeView extends Backbone.View
     FB.ui(obj)
     
   displaycharlength: (e) ->
-    @message = $('#reason').val()
-    length = 140 - @message.length
-    $("#charlength").html(length + ' characters left.')
-  
+    @messagetext = $('#message').val()
+    length = 200 - @messagetext.length
+    if length < 0
+      $("#charlength").html('<font style="color:red;">' + length + '</font>')
+    else
+      $("#charlength").html(length)
+      
+  submit_message: (e) ->
+    e.stopPropagation()
+    e.preventDefault()
+    @message.save({ message: @$('#submit_message [name=message]').val(), wait:true },
+      success: (message) =>
+        $("div.resultSection").html('')
+        $("div.fbSection").html('<div class="captionTxt" style="margin: 0px;margin-top: 31px;color: #E14022;font: 24px \'RobotoRegular\', Arial, sans-serif;"><b>Thank you ' + this.member.attributes.firstname  + '</b>,<br />We just put your message and your name on the birthday card we are making! Meanwhile get your friends to send in their wishes!</div>')
+        @messageflag = 0  
+      error: (message, jqXHR) =>
+        @model.set({errors: $.parseJSON(jqXHR.responseText)})
+    )
+    
   render: ->
+
     @member.fetch(
       success: =>
+        if @message.attributes.hasOwnProperty("message")
+          @messageflag = 0
         $(@el).html(@template())
     )
     
