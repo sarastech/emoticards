@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0; padding:0;}
+body{font: 18px 'RobotoRegular', Arial, sans-serif; overflow:hidden; background:#333;}
+a img{border:0;}
+.wrapper{display:block; overflow:hidden; background:#fff; width:1310px; margin:0 auto;}
+.rgtContent{display:block; overflow:hidden; width:1010px; background:asset-url("rajiniMaster.jpg", images) top right no-repeat; min-height:768px; float:right; position:relative;}
+.lftContent{display:block; overflow:hidden; width:300px; float: right; min-height:768px; position:relative; background:#000; }
+.logo{display:block; overflow:auto; background:asset-url("txt_wishRajini.png", images) 0 0; width:289px; height:248px; margin:40px 0 0 40px;}
+.rgtContent .captionTxt{width:420px; margin:50px 0 0 40px; font: 24px 'RobotoBold', Arial, sans-serif;}
+.fbSection{display:block; overflow:hidden; margin:40px 0 0 40px;}
+.fbSection .fbTxt{ margin-bottom:10px;}
+.resultSection{width:340px; margin:40px 0 0 40px;font: 24px 'RobotoRegular', Arial, sans-serif;}
+.rajiniQuote{display:block; overflow:hidden; width:410px; background:asset-url("transPixelW.png", images) repeat; padding:20px; position:absolute; right:0; top:450px;}  
+.rajiniQuote .quote{font: 20px 'RobotoRegular', Arial, sans-serif;}
+.rajiniQuote .filmName{font: 24px 'RobotoBold', Arial, sans-serif; margin-top:10px;}
+
+.hitCounter{display:block; overflow:hidden; width:280px; background:asset-url("transPixelW.png", images) repeat; padding:20px; position:absolute; right:0; top:450px;}  
+.hitCounter .countNo{font: 48px 'RobotoRegular', Arial, sans-serif; color:#e14022; text-align:right;}
+.hitCounter .wishTxt{font: 30px 'RobotoRegular', Arial, sans-serif; margin-top:5px; text-align:right;}
+.hitCounter .countingTxt{font: 20px 'RobotoRegular', Arial, sans-serif; margin-top:5px; text-align:right;}
