@@ -63,12 +63,12 @@ class Emoticard.Views.Homes.HomeView extends Backbone.View
         obj =
           method: 'feed',
           redirect_uri: 'http://localhost:3000',
-          link: 'http://en.wikipedia.org/wiki/Rajinikanth',
-          picture: 'http://www.kollytalk.com/wp-content/uploads/2012/12/Shiva-with-Rajini.jpg',
-          name: 'Wish Rajini',
+          link: 'http://wishrajini.com',
+          picture: 'http://www.pardaphash.com/uploads/images/660/63734.jpg',
+          name: 'I wished Rajinikanth for his birthday!',
           caption: '12-12-12',
           message: 'hi',
-          description: 'Biggest birthday wish for Rajini.'
+          description: 'I just signed the biggest birthday card made for Superstar Rajinikanth! Include your message and sign as well at http://wishrajini.com'
         FB.ui(obj) 
       error: (message, jqXHR) =>
         @model.set({errors: $.parseJSON(jqXHR.responseText)})

@@ -15,7 +15,7 @@ class MemberController < ApplicationController
     session[:user_id] = @member.id
     session[:fbuid] = @member.fbuid
     session[:email] = @member.email
-    url = "#home/new"
+    url = "#home"
     redirect_to url, :notice => "Signed up!"
   end
 
