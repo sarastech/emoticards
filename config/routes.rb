@@ -26,6 +26,9 @@ Emoticard::Application.routes.draw do
   match "/messages" => "member#save_message", :via => :post
  
 
+  match "/messages/count" => "member#message_count", :via => :get
+  
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
