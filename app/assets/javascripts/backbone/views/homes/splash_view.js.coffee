@@ -25,6 +25,6 @@ class Emoticard.Views.Homes.SplashView extends Backbone.View
   render: ->
     $(@el).html(@template())
     @count_fetch
-    setInterval(@count_fetch,7000)
+    setInterval(@count_fetch,30000)
     setInterval(@change_dialogue,10000)
     return this

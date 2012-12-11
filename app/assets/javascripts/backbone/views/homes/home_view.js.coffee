@@ -81,6 +81,6 @@ class Emoticard.Views.Homes.HomeView extends Backbone.View
           @messageflag = 0
         $(@el).html(@template())
     )
-    setInterval(@count_fetch,7000)
+    setInterval(@count_fetch,30000)
     setInterval(@change_dialogue,10000)  
     return this
