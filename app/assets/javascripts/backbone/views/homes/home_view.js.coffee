@@ -20,7 +20,7 @@ class Emoticard.Views.Homes.HomeView extends Backbone.View
   count_fetch: () ->
     @message_s = new Emoticard.Models.Message() 
     @message_s.fetch(url: '/messages/count', async:false)
-    $('div.countNo').html(121 + @message_s.attributes.count)
+    $('div.countNo').html(900 + @message_s.attributes.count)
     
   change_dialogue: () -> 
     dialogues = ["En vazhi thani vazhi<br /><i style=\"font-size: 14px;\">My way is a unique way</i>","Naan oru dhadavai sonna, nooru dhadavai sonna madhiri<br /><i style=\"font-size: 14px;\">If I say it once, its equivalent to having said it a 100 times</i>","Andavan solran. Arunachalam seiran<br /><i style=\"font-size: 14px;\">God commands. I obey</i>","Kanna, panni dhan Kootama varum. Singam Singleaa dhaan varum<br /><i style=\"font-size: 14px;\">Only pigs come in herds. The lion always comes alone</i>","Nee virumburavalai kattikiruthai vida unnai virumburavalai kattikitta, un vazhkkai santhoshama irrukkum<br /><i style=\"font-size: 14px;\">You will be happier if you marry the one who loves you instead of the one you love</i>","Idhu epadi iruku?<br /><i style=\"font-size: 14px;\">How is this?</i>","Seeviduven...seevi<br /><i style=\"font-size: 14px;\">I will chop you into pieces!</i>","Naan late-aah vanthalum,latest-aah varuven<br /><i style=\"font-size: 14px;\">Even if I come late, I will be the latest!</i>","Kashtapadaama edhuvum kidaikaadhu. Kashtapadaama kedachu ennikum nilaikaadhu<br /><i style=\"font-size: 14px;\">You will gain nothing without hardwork. And even if you do, it wont last for long</i>","Katham, Katham. Mudinchathu mudinchu pottchu<br /><i style=\"font-size: 14px;\">Finished. Finished. Whats done is done!</i>",]
